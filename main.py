@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QPushButton, QDialog, QApplication, QStackedWidget
+from PyQt5.QtWidgets import QPushButton, QDialog, QApplication, QStackedWidget, QTableWidgetItem
 from PyQt5 import uic
 import sys
 
@@ -176,7 +176,7 @@ class currB(QDialog):
 
 class bookHist(QDialog):
     def __init__(self):
-        super(bookHist,self).__init__()
+        super(bookHist, self).__init__()
         uic.loadUi("UIPages/bookHistory.ui", self)
 
         self.tableWidget.setColumnWidth(0, 160)
@@ -185,6 +185,15 @@ class bookHist(QDialog):
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
+    def loaddata(self):
+        books = funcs.book_history_fetch(rno)
+        self.tableWidget.setRowCount(len(books))
+        for row, book in enumerate(books):
+            self.tableWidget.setItem(row, 0, QTableWidgetItem(book[0]))
+            self.tableWidget.setItem(row, 1, QTableWidgetItem(book[1]))
+            self.tableWidget.setItem(row, 2, QTableWidgetItem(str(book[2])))
+            self.tableWidget.setItem(row, 3, QTableWidgetItem(str(book[3])))
 
 
 app = QApplication(sys.argv)
