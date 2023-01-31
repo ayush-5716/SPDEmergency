@@ -14,7 +14,14 @@ class Login(QDialog):
         widget.addWidget(home_p)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
+class editProfileP(QDialog):
+    def __init__(self):
+        super(editProfileP,self).__init__()
+        uic.loadUi("UIPages/profileEditPage.ui",self)
+        self.backButton.clicked.connect(self.goBack)
 
+    def goBack(self):
+        widget.removeWidget(widget.currentWidget())
 
 class profile_page(QDialog):
     def __init__(self):
@@ -22,9 +29,15 @@ class profile_page(QDialog):
         uic.loadUi("UIPages/profilepage.ui",self)
 
         self.backButton.clicked.connect(self.goBack)
+        self.editprofile.clicked.connect(self.goToEditPage)
     
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
+    def goToEditPage(self):
+        eP = editProfileP()
+        widget.addWidget(eP)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     
 class home_page(QDialog):
