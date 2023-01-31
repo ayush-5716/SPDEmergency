@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QPushButton,QDialog,QApplication,QStackedWidget
+from PyQt5.QtWidgets import QPushButton, QDialog, QApplication, QStackedWidget
 from PyQt5 import uic
 import sys
 
@@ -11,11 +11,10 @@ class Login(QDialog):
         uic.loadUi("UIPages/login.ui", self)
 
         self.login_button.clicked.connect(self.go_to_homepage)
-        
     def go_to_homepage(self):
         global rno
         rno = self.usernameText.text()
-        if funcs.login_check(rno, self.passwordText.text()):
+        if not funcs.login_check(rno, self.passwordText.text()):
             home_p = home_page()
             widget.addWidget(home_p)
             widget.setCurrentIndex(widget.currentIndex() + 1)
@@ -26,9 +25,21 @@ class editProfileP(QDialog):
         super(editProfileP, self).__init__()
         uic.loadUi("UIPages/profileEditPage.ui", self)
         self.backButton.clicked.connect(self.goBack)
+        self.pushButton.clicked.connect(self.apply)
+
+        name, email, phone = funcs.personal_info_fetch(rno)
+
+        self.rno.setText(rno)
+        self.nameT.setText(name)
+        self.emailT.setText(email)
+        self.phoneT.setText(phone)
+    # TODO: apply in phone number
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
+    def apply(self):
+        funcs.personal_info_submit(rno, self.nameT.text(), self.phoneT.text(), self.emailT.text())
 
 
 class profile_page(QDialog):
