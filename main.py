@@ -67,7 +67,6 @@ class profile_page(QDialog):
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
 
-
 class home_page(QDialog):
     def __init__(self):
         super(home_page, self).__init__()
@@ -102,6 +101,7 @@ class home_page(QDialog):
         widget.addWidget(my_books_page)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
+
 class notif_page(QDialog):
     def __init__(self):
         super(notif_page,self).__init__()
@@ -111,6 +111,7 @@ class notif_page(QDialog):
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
 
 class libBooks(QDialog):
     def __init__(self):
@@ -122,10 +123,11 @@ class libBooks(QDialog):
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
+
 class myBP(QDialog):
     def __init__(self):
-        super(myBP,self).__init__()
-        uic.loadUi("UIPages/myBooksP.ui",self)
+        super(myBP, self).__init__()
+        uic.loadUi("UIPages/myBooksP.ui", self)
 
         self.backButton.clicked.connect(self.goBack)
         self.bookHistory.clicked.connect(self.goToBookHist)
@@ -150,37 +152,40 @@ class myBP(QDialog):
         widget.addWidget(RP)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
+
 class remPage(QDialog):
     def __init__(self):
-        super(remPage,self).__init__()
-        uic.loadUi("UIPages/remPage.ui",self)
+        super(remPage, self).__init__()
+        uic.loadUi("UIPages/remPage.ui", self)
 
         self.backButton.clicked.connect(self.goBack)
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
+
 class currB(QDialog):
     def __init__(self):
-        super(currB,self).__init__()
-        uic.loadUi("UIPages/currBooks.ui",self)
+        super(currB, self).__init__()
+        uic.loadUi("UIPages/currBooks.ui", self)
         self.backButton.clicked.connect(self.goback)
 
     def goback(self):
         widget.removeWidget(widget.currentWidget())
 
+
 class bookHist(QDialog):
     def __init__(self):
         super(bookHist,self).__init__()
-        uic.loadUi("UIPages/bookHistory.ui",self)
+        uic.loadUi("UIPages/bookHistory.ui", self)
 
-        self.tableWidget.setColumnWidth(0,160)
-
+        self.tableWidget.setColumnWidth(0, 160)
 
         self.backButton.clicked.connect(self.goBack)
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
