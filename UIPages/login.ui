@@ -31,7 +31,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="login_button">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -418,7 +418,7 @@
    </property>
   </widget>
   <zorder>bg</zorder>
-  <zorder>pushButton</zorder>
+  <zorder>login_button</zorder>
   <zorder>usernameText</zorder>
   <zorder>username</zorder>
   <zorder>passwordText</zorder>

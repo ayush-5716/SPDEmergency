@@ -6,8 +6,21 @@ class Login(QDialog):
     def __init__(self):
         super(Login,self).__init__()
         uic.loadUi("UIPages/login.ui",self)
-        
 
+        self.login_button.clicked.connect(self.go_to_homepage)
+
+    def go_to_homepage(self):
+        home_p = home_page()
+        widget.addWidget(home_p)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
+
+
+
+
+class home_page(QDialog):
+    def __init__(self):
+        super(home_page,self).__init__()
+        uic.loadUi("UIPages/homepage.ui",self)
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
