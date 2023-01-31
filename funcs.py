@@ -31,7 +31,7 @@ def login_check(user_id, password):
 
 def personal_info_fetch(user_id):
     cr.execute("SELECT name, phone_number, mail_id FROM users WHERE reg_no=%s", (user_id,))
-    return cr.fetchone()
+    return user_id, *cr.fetchone()
 
 
 def personal_info_submit(user_id, name, phone, mail):

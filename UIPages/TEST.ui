@@ -31,7 +31,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="login_button">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -417,47 +417,13 @@
     <string>LIBRARY MANAGER</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="createButton">
-   <property name="geometry">
-    <rect>
-     <x>960</x>
-     <y>800</y>
-     <width>191</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="font">
-    <font>
-     <family>Rockwell Condensed</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>CREATE ACCOUNT</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>50</width>
-     <height>50</height>
-    </size>
-   </property>
-  </widget>
   <zorder>bg</zorder>
-  <zorder>login_button</zorder>
+  <zorder>pushButton</zorder>
   <zorder>usernameText</zorder>
   <zorder>username</zorder>
   <zorder>passwordText</zorder>
   <zorder>password</zorder>
   <zorder>label</zorder>
-  <zorder>createButton</zorder>
  </widget>
  <resources/>
  <connections/>
