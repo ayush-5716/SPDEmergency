@@ -31,7 +31,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="logOut">
    <property name="geometry">
     <rect>
      <x>1040</x>
@@ -263,7 +263,7 @@
    </property>
   </widget>
   <zorder>bg</zorder>
-  <zorder>pushButton</zorder>
+  <zorder>logOut</zorder>
   <zorder>profileButton</zorder>
   <zorder>hometitle</zorder>
   <zorder>myBooksButton</zorder>
