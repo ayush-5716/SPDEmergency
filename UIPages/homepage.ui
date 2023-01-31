@@ -52,7 +52,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
+     <normaloff>../../../images/logout.png</normaloff>../../../images/logout.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -83,7 +83,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/login3.jpeg</normaloff>../images/login3.jpeg</iconset>
+     <normaloff>../../../images/login3.jpeg</normaloff>../../../images/login3.jpeg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -105,7 +105,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../images/bghome.jpg</pixmap>
+    <pixmap>../../../images/bghome.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -191,7 +191,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/iconLib.jpeg</normaloff>../images/iconLib.jpeg</iconset>
+     <normaloff>../../../images/iconLib.jpeg</normaloff>../../../images/iconLib.jpeg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -222,7 +222,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/lib.jpg</normaloff>../images/lib.jpg</iconset>
+     <normaloff>../../../images/lib.jpg</normaloff>../../../images/lib.jpg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -253,7 +253,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../images/download.jpeg</normaloff>../images/download.jpeg</iconset>
+     <normaloff>../../../images/download.jpeg</normaloff>../../../images/download.jpeg</iconset>
    </property>
    <property name="iconSize">
     <size>
