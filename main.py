@@ -30,6 +30,16 @@ class profile_page(QDialog):
 
         self.backButton.clicked.connect(self.goBack)
         self.editprofile.clicked.connect(self.goToEditPage)
+
+        # variables for text boxes
+        # self.rno.setText("")
+        # self.name.setText("")
+        # self.email.setText("")
+        # self.phone.setText("")
+
+        # variables for buttons
+        # self.editProfile.clicked.connect(functionname)
+
     
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
