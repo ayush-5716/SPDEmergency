@@ -16,7 +16,7 @@ def library_status():
 def time_right_now():
     return datetime.datetime.now().strftime("%X")
 
-
+#penalty
 def login_check(user_id, password):
     cr.execute("SELECT reg_no FROM users WHERE reg_no=%s", (user_id,))
     if cr.fetchone():
