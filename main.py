@@ -173,6 +173,15 @@ class currB(QDialog):
     def goback(self):
         widget.removeWidget(widget.currentWidget())
 
+    def load_data(self):
+        books = funcs.current_books_fetch(rno)
+        self.tableWidget.setRowCount(len(books))
+        for row, book in enumerate(books):
+            self.tableWidget.setItem(row, 0, QTableWidgetItem(book[0]))
+            self.tableWidget.setItem(row, 1, QTableWidgetItem(book[1]))
+            self.tableWidget.setItem(row, 2, QTableWidgetItem(str(book[2])))
+            self.tableWidget.setItem(row, 3, QTableWidgetItem(str(book[3])))
+
 
 class bookHist(QDialog):
     def __init__(self):
@@ -180,13 +189,13 @@ class bookHist(QDialog):
         uic.loadUi("UIPages/bookHistory.ui", self)
 
         self.tableWidget.setColumnWidth(0, 160)
-
+        self.load_data()
         self.backButton.clicked.connect(self.goBack)
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
-    def loaddata(self):
+    def load_data(self):
         books = funcs.book_history_fetch(rno)
         self.tableWidget.setRowCount(len(books))
         for row, book in enumerate(books):
