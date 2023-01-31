@@ -2,10 +2,11 @@ from PyQt5.QtWidgets import QPushButton,QDialog,QApplication,QStackedWidget
 from PyQt5 import uic
 import sys
 
+
 class Login(QDialog):
     def __init__(self):
         super(Login,self).__init__()
-        uic.loadUi("UIPages/login.ui",self)
+        uic.loadUi("UIPages/login.ui", self)
 
         self.login_button.clicked.connect(self.go_to_homepage)
         
@@ -14,19 +15,21 @@ class Login(QDialog):
         widget.addWidget(home_p)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
+
 class editProfileP(QDialog):
     def __init__(self):
-        super(editProfileP,self).__init__()
-        uic.loadUi("UIPages/profileEditPage.ui",self)
+        super(editProfileP, self).__init__()
+        uic.loadUi("UIPages/profileEditPage.ui", self)
         self.backButton.clicked.connect(self.goBack)
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
+
 class profile_page(QDialog):
     def __init__(self):
-        super(profile_page,self).__init__()
-        uic.loadUi("UIPages/profilepage.ui",self)
+        super(profile_page, self).__init__()
+        uic.loadUi("UIPages/profilepage.ui", self)
 
         self.backButton.clicked.connect(self.goBack)
         self.editprofile.clicked.connect(self.goToEditPage)
@@ -40,7 +43,6 @@ class profile_page(QDialog):
         # variables for buttons
         # self.editProfile.clicked.connect(functionname)
 
-    
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
@@ -49,11 +51,11 @@ class profile_page(QDialog):
         widget.addWidget(eP)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
-    
+
 class home_page(QDialog):
     def __init__(self):
-        super(home_page,self).__init__()
-        uic.loadUi("UIPages/homepage.ui",self)
+        super(home_page, self).__init__()
+        uic.loadUi("UIPages/homepage.ui", self)
 
         self.logOut.clicked.connect(self.goBack)
         self.profileButton.clicked.connect(self.go_to_profile)
@@ -65,6 +67,7 @@ class home_page(QDialog):
         profile_page_var = profile_page()
         widget.addWidget(profile_page_var)
         widget.setCurrentIndex(widget.currentIndex() + 1)
+
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()

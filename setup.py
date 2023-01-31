@@ -11,6 +11,7 @@ create table users(
 reg_no varchar(20) primary key,
 password char(64) not null,
 name varchar(30),
+phone_number char(10),
 mail_id varchar(40),
 book1 varchar(15),
 date1 date,

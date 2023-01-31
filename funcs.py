@@ -3,13 +3,12 @@ import hashlib
 import datetime
 import random
 import smtplib
-import math
 
 db = mysql.connector.connect(host="localhost", username="root", password="sqlsme", database="library")
 cr = db.cursor()
 
 
-def library_status():
+def auto_library_status():
     return 8 < datetime.datetime.now().hour < 20
 
 
@@ -31,12 +30,12 @@ def login_check(user_id, password):
 
 
 def personal_info_fetch(user_id):
-    cr.execute("SELECT name, mail_id FROM users WHERE reg_no=%s", (user_id,))
+    cr.execute("SELECT name, phone_number, mail_id FROM users WHERE reg_no=%s", (user_id,))
     return user_id, *cr.fetchone()
 
 
-def personal_info_submit(user_id, name, mail):
-    cr.execute("UPDATE users SET name=%s, mail_id=%s WHERE reg_no=%s", (name, mail, user_id))
+def personal_info_submit(user_id, name, phone, mail):
+    cr.execute("UPDATE users SET name=%s, phone_number=%s, mail_id=%s WHERE reg_no=%s", (name, phone, mail, user_id))
     db.commit()
 
 
@@ -52,3 +51,8 @@ def generate_otp():
         OTP += string[random.choice(string)]
     return OTP
     # TODO: Implement json file for sender mail
+
+
+def send_otp():
+    # TODO
+    pass
