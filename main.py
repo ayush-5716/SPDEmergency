@@ -34,8 +34,7 @@ class editProfileP(QDialog):
         self.nameT.setText(name)
         self.emailT.setText(email)
         self.phoneT.setText(phone)
-    # TODO: apply in phone number
-
+    # TODO: apply in afterwards
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
