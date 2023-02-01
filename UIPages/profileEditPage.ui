@@ -81,7 +81,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLineEdit" name="passT">
+   <widget class="QLineEdit" name="phoneT">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -197,7 +197,7 @@
      <string>APPLY CHANGE</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="rno">
     <property name="geometry">
      <rect>
       <x>120</x>
