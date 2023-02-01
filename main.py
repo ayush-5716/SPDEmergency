@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QPushButton,QDialog,QApplication,QStackedWidget
+from PyQt5.QtWidgets import QPushButton, QDialog, QApplication, QStackedWidget, QTableWidgetItem
 from PyQt5 import uic
 import sys
 
@@ -12,7 +12,6 @@ class Login(QDialog):
 
         self.login_button.clicked.connect(self.go_to_homepage)
 
-        
     def go_to_homepage(self):
         global rno
         rno = self.usernameText.text()
@@ -27,9 +26,21 @@ class editProfileP(QDialog):
         super(editProfileP, self).__init__()
         uic.loadUi("UIPages/profileEditPage.ui", self)
         self.backButton.clicked.connect(self.goBack)
+        self.pushButton.clicked.connect(self.apply)
+
+        name, email, phone = funcs.personal_info_fetch(rno)
+
+        self.rno.setText(rno)
+        self.nameT.setText(name)
+        self.emailT.setText(email)
+        self.phoneT.setText(phone)
+    # TODO: apply in phone number
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
+    def apply(self):
+        funcs.personal_info_submit(rno, self.nameT.text(), self.phoneT.text(), self.emailT.text())
 
 
 class profile_page(QDialog):
@@ -55,9 +66,7 @@ class profile_page(QDialog):
         widget.addWidget(eP)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
-   
 
-    
 class home_page(QDialog):
     def __init__(self):
         super(home_page, self).__init__()
@@ -78,7 +87,7 @@ class home_page(QDialog):
         LB = libBooks()
         widget.addWidget(LB)
         widget.setCurrentIndex(widget.currentIndex() + 1)
-    
+
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
@@ -92,15 +101,17 @@ class home_page(QDialog):
         widget.addWidget(my_books_page)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
+
 class notif_page(QDialog):
     def __init__(self):
         super(notif_page,self).__init__()
         uic.loadUi("UIPages/notifSet.ui",self)
 
         self.backButton.clicked.connect(self.goBack)
-    
+
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
 
 class libBooks(QDialog):
     def __init__(self):
@@ -108,14 +119,15 @@ class libBooks(QDialog):
         uic.loadUi("UIPages/libBooksPage.ui",self)
 
         self.backButton.clicked.connect(self.goBack)
-        
+
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
 
+
 class myBP(QDialog):
     def __init__(self):
-        super(myBP,self).__init__()
-        uic.loadUi("UIPages/myBooksP.ui",self)
+        super(myBP, self).__init__()
+        uic.loadUi("UIPages/myBooksP.ui", self)
 
         self.backButton.clicked.connect(self.goBack)
         self.bookHistory.clicked.connect(self.goToBookHist)
@@ -134,43 +146,64 @@ class myBP(QDialog):
         currBS = currB()
         widget.addWidget(currBS)
         widget.setCurrentIndex(widget.currentIndex()+1)
-    
+
     def goToRemPage(self):
         RP = remPage()
         widget.addWidget(RP)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
+
 class remPage(QDialog):
     def __init__(self):
-        super(remPage,self).__init__()
-        uic.loadUi("UIPages/remPage.ui",self)
+        super(remPage, self).__init__()
+        uic.loadUi("UIPages/remPage.ui", self)
 
         self.backButton.clicked.connect(self.goBack)
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
 
 class currB(QDialog):
     def __init__(self):
-        super(currB,self).__init__()
-        uic.loadUi("UIPages/currBooks.ui",self)
+        super(currB, self).__init__()
+        uic.loadUi("UIPages/currBooks.ui", self)
         self.backButton.clicked.connect(self.goback)
-    
+
     def goback(self):
         widget.removeWidget(widget.currentWidget())
 
+    def load_data(self):
+        books = funcs.current_books_fetch(rno)
+        self.tableWidget.setRowCount(len(books))
+        for row, book in enumerate(books):
+            self.tableWidget.setItem(row, 0, QTableWidgetItem(book[0]))
+            self.tableWidget.setItem(row, 1, QTableWidgetItem(book[1]))
+            self.tableWidget.setItem(row, 2, QTableWidgetItem(str(book[2])))
+            self.tableWidget.setItem(row, 3, QTableWidgetItem(str(book[3])))
+
+
 class bookHist(QDialog):
     def __init__(self):
-        super(bookHist,self).__init__()
-        uic.loadUi("UIPages/bookHistory.ui",self)
+        super(bookHist, self).__init__()
+        uic.loadUi("UIPages/bookHistory.ui", self)
 
-        self.tableWidget.setColumnWidth(0,160)
-
-
+        self.tableWidget.setColumnWidth(0, 160)
+        self.load_data()
         self.backButton.clicked.connect(self.goBack)
 
     def goBack(self):
         widget.removeWidget(widget.currentWidget())
+
+    def load_data(self):
+        books = funcs.book_history_fetch(rno)
+        self.tableWidget.setRowCount(len(books))
+        for row, book in enumerate(books):
+            self.tableWidget.setItem(row, 0, QTableWidgetItem(book[0]))
+            self.tableWidget.setItem(row, 1, QTableWidgetItem(book[1]))
+            self.tableWidget.setItem(row, 2, QTableWidgetItem(str(book[2])))
+            self.tableWidget.setItem(row, 3, QTableWidgetItem(str(book[3])))
+
 
 app = QApplication(sys.argv)
 widget = QStackedWidget()
