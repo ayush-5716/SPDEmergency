@@ -77,6 +77,9 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">selection-color: rgb(255, 255, 0);</string>
+   </property>
   </widget>
   <widget class="QLabel" name="username">
    <property name="geometry">
@@ -389,32 +392,10 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../images/lib.jpg</pixmap>
+    <pixmap>../../../../../Pictures/actualproject/bg.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>50</y>
-     <width>301</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Rockwell Condensed</family>
-     <pointsize>22</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-     <underline>true</underline>
-    </font>
-   </property>
-   <property name="text">
-    <string>LIBRARY MANAGER</string>
    </property>
   </widget>
   <widget class="QPushButton" name="createButton">
@@ -456,7 +437,6 @@
   <zorder>username</zorder>
   <zorder>passwordText</zorder>
   <zorder>password</zorder>
-  <zorder>label</zorder>
   <zorder>createButton</zorder>
  </widget>
  <resources/>
