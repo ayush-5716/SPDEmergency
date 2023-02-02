@@ -376,7 +376,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../../../Pictures/actualproject/kjl.jpeg</pixmap>
+    <pixmap>../images/kjl.jpeg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>
@@ -398,7 +398,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../../../Pictures/actualproject/bg.jpg</pixmap>
+    <pixmap>../images/bg.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -579,7 +579,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../../../Pictures/actualproject/kjl.jpeg</pixmap>
+    <pixmap>../images/kjl.jpeg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>false</bool>

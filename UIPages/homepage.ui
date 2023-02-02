@@ -42,9 +42,10 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>ROG Fonts</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -72,10 +73,10 @@
    </property>
    <property name="font">
     <font>
-     <family>Palatino Linotype</family>
+     <family>ROG Fonts</family>
      <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -105,7 +106,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../images/bghome.jpg</pixmap>
+    <pixmap>../images/bg.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -114,9 +115,9 @@
   <widget class="QLabel" name="hometitle">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>171</width>
+     <x>50</x>
+     <y>40</y>
+     <width>201</width>
      <height>41</height>
     </rect>
    </property>
@@ -126,9 +127,9 @@
       <colorrole role="WindowText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
@@ -137,9 +138,9 @@
       <colorrole role="WindowText">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
@@ -159,10 +160,10 @@
    </property>
    <property name="font">
     <font>
-     <family>Rockwell Condensed</family>
-     <pointsize>20</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>ROG Fonts</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -180,10 +181,10 @@
    </property>
    <property name="font">
     <font>
-     <family>Palatino Linotype</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>ROG Fonts</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -211,10 +212,10 @@
    </property>
    <property name="font">
     <font>
-     <family>Palatino Linotype</family>
+     <family>ROG Fonts</family>
      <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -242,10 +243,10 @@
    </property>
    <property name="font">
     <font>
-     <family>Palatino Linotype</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>ROG Fonts</family>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
@@ -262,13 +263,30 @@
     </size>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>281</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../images/kjl.jpeg</pixmap>
+   </property>
+  </widget>
   <zorder>bg</zorder>
   <zorder>logOut</zorder>
   <zorder>profileButton</zorder>
-  <zorder>hometitle</zorder>
   <zorder>myBooksButton</zorder>
   <zorder>libBooksbutton</zorder>
   <zorder>notifButton</zorder>
+  <zorder>label</zorder>
+  <zorder>hometitle</zorder>
  </widget>
  <resources/>
  <connections/>
